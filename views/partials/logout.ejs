@@ -1,0 +1,22 @@
+
+<button class="button" id="log_out_user" type="button">Cerrar Sesión</button>
+<button class="button" id="return_to_home" type="button">Regresar a Inicio</button>
+
+<script>
+	$("#log_out_user").on("click",function(){
+		$.ajax({
+			url: "/logout",
+			method: "POST", 
+			success: function(){
+				location.href = "http://localhost:3000";
+			},
+			error: function(){
+				
+			}
+		})
+	});
+
+	$("#return_to_home").on("click",function(){
+		location.href = "http://localhost:3000/home";
+	});
+</script>
